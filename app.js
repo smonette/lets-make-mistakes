@@ -32,21 +32,21 @@ app.get('/', function(req,res){
   res.render('pages/index', {shows: allTracks});
 });
 
-app.get('/episode/:id', function(req,res){
-  id = req.params.id;
+// app.get('/episode/:id', function(req,res){
+//   id = req.params.id;
 
-  SC.get('/tracks/'+ id, function(err, track) {
-    if ( err ) {
-      console.log('well shit, soundcloud didnt load');
-    } else {
-      console.log('omfg it worked!:', track);
-      // var allTracks = JSON.parse(track);
-      singleTrack = track;
-    }
-  });
+//   SC.get('/tracks/'+ id, function(err, track) {
+//     if ( err ) {
+//       console.log('well shit, soundcloud didnt load');
+//     } else {
+//       console.log('omfg it worked!:', track);
+//       // var allTracks = JSON.parse(track);
+//       singleTrack = track;
+//     }
+//   });
 
-  res.render('pages/episode', {show: singleTrack});
-});
+//   res.render('pages/episode', {show: singleTrack});
+// });
 
 // START THE SERVER
 
