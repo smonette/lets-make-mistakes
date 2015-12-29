@@ -1,0 +1,19 @@
+/*
+
+Rem/Px Function
+---
+This is a fun one. If we support rems, calculate rems according to a pixel
+value. If not, just spit out the pixel value. This means we can detect rem
+support and spit out the stylesheet accordingly, all while writing only one
+codebase.
+
+*/
+
+@function rem-px($n) {
+  @if $rem-supported {
+    @return rem($n);
+  }
+  @else {
+    @return $n;
+  }
+}

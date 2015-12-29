@@ -1,0 +1,21 @@
+// static image for mobile, and desktop load
+body {
+  background-color: $teal;
+  background-image: url('http://muledesign.com/mistakes/rabbits.jpg');
+  background-attachment: fixed;
+  background-position: center 0;
+  
+  // add animation when page loads
+  @include media($tablet-up){
+    background-size: cover;
+    background-position: inherit;
+    background-image: url('http://muledesign.com/mistakes/bunny.gif'),
+                      url('http://muledesign.com/mistakes/rabbits.jpg');
+  }
+
+}
+
+
+
+
+

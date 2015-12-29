@@ -1,0 +1,317 @@
+/*
+
+Rem/Px Function
+---
+This is a fun one. If we support rems, calculate rems according to a pixel
+value. If not, just spit out the pixel value. This means we can detect rem
+support and spit out the stylesheet accordingly, all while writing only one
+codebase.
+
+*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+body {
+  margin: 0; }
+
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  display: block; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+address, article, aside, audio, blockquote, canvas, dd, div, dl, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, noscript, ol, output, p, pre, section, table, tfoot, ul, video {
+  box-sizing: border-box; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: normal; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+header {
+  text-align: center;
+  margin: 0 auto;
+  padding: 1.25rem; }
+
+.content {
+  width: 100%; }
+
+.row {
+  width: 100%;
+  max-width: 64rem;
+  padding: 1.25rem;
+  margin: 0 auto; }
+
+.large-header .decorative-header-script, .episode-number {
+  font-family: "memoriam-headline-pro",sans-serif;
+  font-style: normal;
+  font-weight: 400; }
+
+body, .large-header .decorative-header-sans {
+  font-family: "proxima-nova",sans-serif; }
+
+body {
+  font-size: 1.125rem;
+  line-height: 1.5rem; }
+
+.site-title {
+  opacity: 0; }
+
+a {
+  cursor: pointer; }
+
+.large-heading {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+  text-align: center;
+  color: #fff; }
+  @media screen and (min-width: 48em) {
+    .large-heading {
+      font-size: 3rem;
+      width: 60%;
+      margin-right: auto;
+      margin-bottom: 2.5rem;
+      margin-left: auto; } }
+
+.small-heading {
+  font-size: 1.375rem;
+  line-height: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem; }
+  @media screen and (min-width: 48em) {
+    .small-heading {
+      font-size: 2rem;
+      line-height: 2.5rem; } }
+
+.large-header {
+  padding: 0 1.25rem;
+  max-width: 75rem;
+  margin-right: auto;
+  margin-bottom: 3.125rem;
+  margin-left: auto;
+  text-align: center; }
+  @media screen and (min-width: 48em) {
+    .large-header {
+      padding: 0 6.25rem;
+      margin-bottom: 12.5rem; } }
+  .large-header .decorative-header-script {
+    color: #F95F9A; }
+  .large-header .decorative-header-sans {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900; }
+  @media screen and (min-width: 48em) {
+    .large-header .decorative-header-lets {
+      max-width: 70%; } }
+  .large-header .decorative-header-make {
+    position: relative;
+    z-index: -1;
+    margin-top: 0.625rem; }
+    @media screen and (min-width: 48em) {
+      .large-header .decorative-header-make {
+        margin-top: -4.0625rem; } }
+  .large-header .decorative-header-mistakes {
+    margin-top: -1.25rem; }
+    @media screen and (min-width: 48em) {
+      .large-header .decorative-header-mistakes {
+        margin-top: -3.75rem; } }
+
+.tagline {
+  color: #fff;
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 1.5rem; }
+  @media screen and (min-width: 48em) {
+    .tagline {
+      font-size: 2.5rem;
+      margin-top: -6.25rem; } }
+
+footer {
+  background: rgba(249, 95, 154, 0.8);
+  padding: 2.5rem 0 3.75rem 0; }
+  footer a {
+    -webkit-transition: color 0.15s ease;
+    -moz-transition: color 0.15s ease;
+    transition: color 0.15s ease;
+    color: #000; }
+    footer a:hover {
+      color: #fff; }
+
+.host-box {
+  display: inline-block;
+  padding: 0 0.625rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  vertical-align: top;
+  text-align: center; }
+  @media screen and (min-width: 48em) {
+    .host-box {
+      width: 32%; } }
+
+.host-photo {
+  height: 9.375rem;
+  width: 9.375rem;
+  margin-bottom: 1.25rem;
+  border-radius: 50%; }
+
+.host-photo-box a:hover .host-photo {
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5); }
+
+.footer-subtitle {
+  text-align: center;
+  margin-top: 6.25rem;
+  color: #fff;
+  font-size: 0.6875rem; }
+
+.footer-subtitle-divider {
+  padding: 0 0.625rem; }
+
+body {
+  background-color: #66BB99;
+  background-image: url("http://muledesign.com/mistakes/rabbits.jpg");
+  background-attachment: fixed;
+  background-position: center 0; }
+  @media screen and (min-width: 48em) {
+    body {
+      background-size: cover;
+      background-position: inherit;
+      background-image: url("http://muledesign.com/mistakes/bunny.gif"), url("http://muledesign.com/mistakes/rabbits.jpg"); } }
+
+.episode {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3.75rem 1.25rem 1.25rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0.1875rem;
+  text-align: center; }
+  @media screen and (min-width: 48em) {
+    .episode {
+      padding: 1.25rem; } }
+
+.recent-episode {
+  background: rgba(255, 255, 255, 0.9); }
+  @media screen and (min-width: 48em) {
+    .recent-episode {
+      width: 60%;
+      margin-right: auto;
+      margin-bottom: 6.25rem;
+      margin-left: auto; } }
+
+.episode-player {
+  margin-top: 2.5rem; }
+
+@media screen and (min-width: 48em) {
+  .episode-list {
+    width: 60%;
+    margin: 0 auto; } }
+
+.episode-number {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 2.5rem; }
+  .episode-number a {
+    -webkit-transition: color 0.15s ease;
+    -moz-transition: color 0.15s ease;
+    transition: color 0.15s ease;
+    color: #F95F9A; }
+    .episode-number a:hover {
+      color: #66BB99; }
+  @media screen and (min-width: 48em) {
+    .episode-number {
+      margin-top: 2.5rem; } }
+
+@media screen and (min-width: 48em) {
+  .episode-details,
+  .episode-text {
+    display: inline-block;
+    vertical-align: middle; } }
+
+.episode-details {
+  padding-top: 1.25rem 0; }
+  @media screen and (min-width: 48em) {
+    .episode-details {
+      width: 25%; } }
+
+.episode-date {
+  margin-bottom: 1.25rem; }
+
+@media screen and (min-width: 48em) {
+  .episode-text {
+    width: 74%;
+    text-align: left;
+    padding-left: 2.5rem; } }
+
+.episode-title a {
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  transition: color 0.15s ease;
+  color: #66BB99; }
+  .episode-title a:hover {
+    color: #F95F9A; }
+
+.see-all {
+  margin-top: 2.5rem;
+  margin-bottom: 3.75rem;
+  text-align: center; }
+  .see-all a {
+    -webkit-transition: color 0.15s ease;
+    -moz-transition: color 0.15s ease;
+    transition: color 0.15s ease;
+    color: #fff; }
+    .see-all a:hover {
+      color: #F95F9A; }

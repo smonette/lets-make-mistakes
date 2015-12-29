@@ -1,0 +1,56 @@
+%type-script {
+  font-family: "memoriam-headline-pro",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+%type-sans {
+  font-family: "proxima-nova",sans-serif;
+}
+
+body {
+  @extend %type-sans;
+  font-size: rem-px(18px);
+  line-height: rem-px(24px);
+}
+
+.site-title {
+  opacity: 0;
+}
+
+a {
+  cursor: pointer;
+}
+
+
+
+
+// Headings that aren't the fancy jumbo heading
+.large-heading {
+  font-size: rem-px(28px);
+  line-height: rem-px(36px);
+  font-weight: 600;
+  margin-bottom: rem-px(10px);
+  text-align: center;
+  color: #fff;
+
+  @include media($tablet-up){
+    font-size: rem-px(48px);
+    width: 60%;
+    margin-right:auto;
+    margin-bottom: rem-px(40px);
+    margin-left:auto;
+   }
+}
+
+.small-heading {
+  font-size: rem-px(22px);
+  line-height: rem-px(30px);
+  font-weight: 600;
+  margin-bottom: rem-px(10px);
+
+  @include media($tablet-up){
+    font-size: rem-px(32px);
+    line-height: rem-px(40px);
+  }
+}

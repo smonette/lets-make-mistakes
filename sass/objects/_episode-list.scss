@@ -1,0 +1,91 @@
+// default box styling 
+.episode {
+  background: rgba(#fff, 0.9);
+  padding: rem-px(60px) rem-px(20px) rem-px(20px) rem-px(20px);
+  margin-bottom: rem-px(20px);
+  border-radius: rem-px(3px);
+  text-align: center;
+  @include media($tablet-up){
+    padding: rem-px(20px);
+  }
+}
+
+// most recent episode
+.recent-episode {
+  background: rgba(#fff, 0.9);
+  @include media($tablet-up){
+    width: 60%;
+    margin-right:auto;
+    margin-bottom: rem-px(100px);
+    margin-left:auto;
+   }
+}
+
+.episode-player {
+  margin-top: rem-px(40px);
+}
+
+
+// the archive list
+.episode-list {
+  @include media($tablet-up){
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+.episode-number {
+  @extend %type-script;
+  font-size: rem-px(80px);
+  text-align: center;
+  a {
+    @include link-helper($pink, $teal);
+  }
+
+  @include media($tablet-up){
+    margin-top: rem-px(40px);
+  }
+  margin-bottom: rem-px(40px);
+}
+.episode-details,
+.episode-text {
+   @include media($tablet-up){
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.episode-details {
+  padding-top: rem-px(20px) 0;
+  @include media($tablet-up){
+    width: 25%;
+  }
+}
+.episode-date { 
+  margin-bottom: rem-px(20px);
+   @include media($tablet-up){
+    
+  }
+}
+.episode-text {
+  @include media($tablet-up){
+    width: 74%;
+    text-align: left;
+    padding-left: rem-px(40px);
+  }
+}
+.episode-title {
+  a {
+    @include link-helper($teal, $pink);
+  }
+}
+
+.see-all {
+  margin-top: rem-px(40px); 
+  margin-bottom: rem-px(60px);
+  text-align: center;
+
+   a {
+    @include link-helper(#fff, $pink);
+  }
+}

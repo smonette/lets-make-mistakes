@@ -1,0 +1,12 @@
+$teal: #66BB99;
+$pink: #F95F9A;
+
+
+// BREAKPOINTS
+
+$mobile-range:        em(0px) em(767px);
+$phablet-range:       em(600px) em(767px);
+$tablet-range:        em(768px) em(960px);
+$desktop-range:       em(961px);
+
+$tablet-up:           new-breakpoint(nth($tablet-range, 1));

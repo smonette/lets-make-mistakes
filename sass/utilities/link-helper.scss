@@ -1,0 +1,15 @@
+// Defines link states in a nice shorthand
+@mixin link-helper($default, $hover: null, $visited: null, $visited-hover: null) {
+  @include transition(color 0.15s ease);
+  color: $default;
+
+  @if $visited {
+    &:visited { color: $visited; }
+  }
+  @if $hover {
+    &:hover { color: $hover; }
+  }
+  @if $visited-hover {
+    &:visited:hover { color: $visited-hover; }
+  }
+}

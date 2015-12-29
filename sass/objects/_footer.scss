@@ -1,0 +1,43 @@
+footer {
+  background: rgba($pink,0.8);
+  padding: rem-px(40px) 0 rem-px(60px) 0;
+  
+  a {
+    @include link-helper(#000, #fff);
+  }
+}
+
+// Hosts info
+.host-box {
+  display: inline-block;
+  padding: 0 rem-px(10px);
+  margin-top: rem-px(40px);
+  margin-bottom: rem-px(20px);
+  vertical-align: top;
+  text-align: center;
+
+  @include media($tablet-up){
+    width: 32%;
+  }
+}
+
+.host-photo {
+  height: rem-px(150px);
+  width: rem-px(150px);
+  margin-bottom: rem-px(20px);
+  border-radius: 50%;
+}
+
+.host-photo-box a:hover .host-photo {
+  box-shadow: 0px 0px 20px  rgba(#fff, 0.5);
+}
+
+.footer-subtitle {
+  text-align: center;
+  margin-top: rem-px(100px);
+  color: #fff;
+  font-size: rem-px(11px);
+}
+.footer-subtitle-divider {
+  padding: 0 rem-px(10px);
+}
