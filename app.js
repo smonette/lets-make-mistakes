@@ -21,7 +21,6 @@ SC.get('/users/57850026/tracks', function(err, track) {
   if ( err ) {
     console.log('well shit, soundcloud didnt load');
   } else {
-    console.log('omfg it worked!:', track);
     // var allTracks = JSON.parse(track);
     allTracks = track;
   }
