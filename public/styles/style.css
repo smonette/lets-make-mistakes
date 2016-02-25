@@ -139,6 +139,12 @@ a {
       font-size: 2rem;
       line-height: 2.5rem; } }
 
+.host-heading {
+  font-size: 1.375rem;
+  line-height: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem; }
+
 .large-header {
   padding: 0 1.25rem;
   max-width: 75rem;
@@ -202,7 +208,7 @@ footer {
   text-align: center; }
   @media screen and (min-width: 48em) {
     .host-box {
-      width: 32%; } }
+      width: 24%; } }
 
 .host-photo {
   height: 9.375rem;
