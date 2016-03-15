@@ -11,24 +11,48 @@ app.set('view engine', 'ejs');
  
 // Initialize client
 SC.init({
-  id: '6e7d6bb6fab87f38f69a857e4544b21d',
-  secret: '18a1dca02b5e86e2058fb93c7a4949eb',
-  uri: 'http://www.muleradio.net/callback'
+  id: '56fbb10a3e90facb024774a0708141fe',
+  secret: 'b4a6c44e44e3f402a992e83418931ced',
+  uri: 'http://www.mistakes.show/'
 });
 
-
-SC.get('/users/57850026/tracks', function(err, track) {
-  if ( err ) {
-    console.log('well shit, soundcloud didnt load');
-  } else {
-    // var allTracks = JSON.parse(track);
-    allTracks = track;
-  }
-});
+var user = '/users/57850026/tracks/';
 
 // VIEWS
 app.get('/', function(req,res){
-  res.render('pages/index', {shows: allTracks});
+  SC.get(user , function(err, tracks) {
+    if ( err ) {
+      console.log('well shit, soundcloud didnt load');
+      res.render('pages/index', {shows: null });
+    } else {
+      // var allTracks = JSON.parse(track);
+      res.render('pages/index', {shows: tracks });
+    }
+  });
+});
+
+app.get('/episode', function(req,res){
+  res.redirect('/');
+});
+
+app.get('/episode/:id', function(req,res){   
+  id = req.params.id;  
+    
+  SC.get(user + id, function(err, track) {   
+    if ( err ) {    
+      console.log('well shit, soundcloud didnt load');   
+      singleTrack = null;    
+      res.render('pages/404');   
+    } else {    
+      console.log('omfg it worked!:', track);   
+      singleTrack = track;    
+      res.render('pages/episode', {show: singleTrack});   
+    }   
+  });   
+    
+});
+app.get('/*', function(req,res){  
+  res.render('pages/404');
 });
 
 // START THE SERVER
